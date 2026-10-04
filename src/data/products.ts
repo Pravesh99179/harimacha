@@ -15,6 +15,11 @@ export interface ProductSize {
   price: number;
 }
 
+export interface ProductImage {
+  src: string;
+  alt: string;
+}
+
 export interface Product {
   slug: string;
   name: string;
@@ -25,9 +30,16 @@ export interface Product {
   cup: number | null;
   tag?: string;
   inStock: boolean;
-  /** Placeholder image labels until real photography arrives. */
-  images: { hero: string; detail: string; inUse: string };
+  /** First image is the hero. PLACEHOLDER: shared shots until per-SKU photography arrives. */
+  images: ProductImage[];
 }
+
+const SHOTS = {
+  lineup: { src: '/images/products/range-lineup.jpg', alt: 'Ceremonial, Everyday and Culinary pouches held with a hot latte, iced matcha and a matcha milk drink' },
+  pouches: { src: '/images/products/everyday-ceremonial-pouches.jpg', alt: 'Everyday and Ceremonial matcha pouches held side by side' },
+  sachets: { src: '/images/products/everyday-sachets.jpg', alt: 'Two Everyday matcha sachets held in sunlight' },
+  everyday: { src: '/images/products/everyday-pouch-iced-latte.jpg', alt: 'Everyday matcha 100 g pouch beside an iced matcha latte and a bowl of powder' },
+} satisfies Record<string, ProductImage>;
 
 export const PRODUCTS: Product[] = [
   {
@@ -42,7 +54,7 @@ export const PRODUCTS: Product[] = [
     cup: 12,
     tag: 'Best value',
     inStock: true,
-    images: { hero: 'product shot · everyday · front', detail: 'detail · powder texture', inUse: 'in use · latte' },
+    images: [SHOTS.everyday, SHOTS.pouches, SHOTS.sachets, SHOTS.lineup],
   },
   {
     slug: 'ceremonial',
@@ -55,7 +67,7 @@ export const PRODUCTS: Product[] = [
     ],
     cup: 30,
     inStock: true,
-    images: { hero: 'product shot · ceremonial · front', detail: 'detail · powder texture', inUse: 'in use · usucha in a bowl' },
+    images: [SHOTS.pouches, SHOTS.lineup, SHOTS.everyday, SHOTS.sachets],
   },
   {
     slug: 'culinary',
@@ -65,7 +77,7 @@ export const PRODUCTS: Product[] = [
     sizes: [{ value: '100', label: '100 g pouch', price: 549 }],
     cup: 6,
     inStock: true,
-    images: { hero: 'product shot · culinary · front', detail: 'detail · powder texture', inUse: 'in use · matcha kulfi' },
+    images: [SHOTS.lineup, SHOTS.everyday, SHOTS.pouches, SHOTS.sachets],
   },
   {
     slug: 'kit',
@@ -76,7 +88,7 @@ export const PRODUCTS: Product[] = [
     cup: null,
     tag: 'Gift-ready',
     inStock: true,
-    images: { hero: 'product shot · kit · front', detail: 'detail · bamboo chasen', inUse: 'in use · first whisk' },
+    images: [SHOTS.lineup, SHOTS.pouches, SHOTS.sachets, SHOTS.everyday],
   },
   {
     slug: 'chasen',
@@ -86,7 +98,7 @@ export const PRODUCTS: Product[] = [
     sizes: [{ value: '80', label: '80 prong', price: 699 }],
     cup: null,
     inStock: true,
-    images: { hero: 'product shot · chasen · front', detail: 'detail · 80 prongs', inUse: 'in use · whisking' },
+    images: [SHOTS.sachets, SHOTS.everyday, SHOTS.lineup, SHOTS.pouches],
   },
 ];
 

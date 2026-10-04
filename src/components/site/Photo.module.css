@@ -1,0 +1,2 @@
+.photo { position: relative; overflow: hidden; background: var(--cream-200); }
+.img { object-fit: cover; }

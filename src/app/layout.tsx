@@ -10,9 +10,21 @@ const display = Bagel_Fat_One({ weight: '400', subsets: ['latin'], display: 'swa
 const sans = Jost({ weight: ['400', '500', '600'], subsets: ['latin'], display: 'swap', variable: '--font-jost' });
 const devanagari = Tiro_Devanagari_Hindi({ weight: '400', subsets: ['devanagari'], display: 'swap', variable: '--font-tiro-devanagari' });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+const DESCRIPTION = 'Proper shade-grown, stone-ground matcha at a price that makes it a habit, not a treat. From ₹12 a cup. Packed in India.';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: { default: 'Hari Matcha · Good matcha, every day', template: '%s · Hari Matcha' },
-  description: 'Proper shade-grown, stone-ground matcha at a price that makes it a habit, not a treat. From ₹12 a cup. Packed in India.',
+  description: DESCRIPTION,
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    siteName: 'Hari Matcha',
+    title: 'Hari Matcha · Good matcha, every day',
+    description: DESCRIPTION,
+  },
+  twitter: { card: 'summary_large_image' },
 };
 
 export const viewport: Viewport = {

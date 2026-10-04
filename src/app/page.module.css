@@ -16,6 +16,25 @@
 /* Scroll the comparison table sideways on narrow screens rather than crushing its columns. */
 .gradeTable table { min-width: 720px; }
 
+/* Photo mosaic: tall texture + tall lineup, two squares stacked on the right. */
+.mosaic {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 260px 260px;
+  grid-template-areas: 'texture lineup pouches' 'texture lineup sachets';
+}
+.tile { position: relative; margin: 0; min-width: 0; }
+.tileTexture { grid-area: texture; }
+.tileLineup { grid-area: lineup; }
+.tilePouches { grid-area: pouches; }
+.tileSachets { grid-area: sachets; }
+.caption {
+  position: absolute; left: 16px; right: 16px; bottom: 16px;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 16px 18px; border-radius: 14px;
+  background: var(--surface-page);
+}
+
 .promo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
 .promoCard { display: flex; flex-direction: column; justify-content: center; gap: 14px; }
 
@@ -25,9 +44,15 @@
   .section { padding-top: 64px; }
   .sectionHead { flex-direction: column; align-items: flex-start; }
   .promo { grid-template-columns: minmax(0, 1fr); }
+  .mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 360px 200px 320px;
+    grid-template-areas: 'texture texture' 'pouches sachets' 'lineup lineup';
+  }
 }
 
 @media (max-width: 600px) {
   .promoCard { padding: 28px !important; }
   .promoImage { height: 260px !important; }
+  .mosaic { gap: 10px; grid-template-rows: 320px 160px 280px; }
 }

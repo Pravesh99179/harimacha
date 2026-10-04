@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
+import { getProduct } from '@/data/products';
 import { useCart } from '@/lib/cart';
 import { rupee } from '@/lib/format';
 import { FREE_SHIPPING_THRESHOLD } from '@/lib/pricing';
@@ -9,7 +10,7 @@ import { Button } from '@/components/ui/Button';
 import { IconButton } from '@/components/ui/IconButton';
 import { Logo } from '@/components/ui/Logo';
 import { Text } from '@/components/ui/Text';
-import { Placeholder } from './Placeholder';
+import { Photo } from './Photo';
 import styles from './CartDrawer.module.css';
 
 export function CartDrawer() {
@@ -62,9 +63,11 @@ export function CartDrawer() {
           </div>
         ) : (
           <ul className={styles.items}>
-            {items.map((i) => (
+            {items.map((i) => {
+              const thumb = getProduct(i.id)?.images[0];
+              return (
               <li key={i.key} className={styles.line}>
-                <Placeholder label={i.id} height={84} radius={10} className={styles.thumb} />
+                {thumb && <Photo src={thumb.src} alt="" height={84} radius={10} sizes="72px" className={styles.thumb} />}
                 <div className={styles.info}>
                   <div className={styles.row}>
                     <Link href={`/products/${i.id}`} className={styles.name} onClick={() => setOpen(false)}>{i.name}</Link>
@@ -79,7 +82,8 @@ export function CartDrawer() {
                   </div>
                 </div>
               </li>
-            ))}
+              );
+            })}
           </ul>
         )}
 

@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Text } from '@/components/ui/Text';
-import { Placeholder } from './Placeholder';
+import { Photo } from './Photo';
 import styles from './ProductTile.module.css';
 
 export function ProductTile({ product: p }: { product: Product }) {
@@ -16,7 +16,7 @@ export function ProductTile({ product: p }: { product: Product }) {
   return (
     <Card as="article" padding={0} interactive className={styles.tile}>
       <div className={styles.media}>
-        <Placeholder label={`product shot · ${p.slug}`} height={240} radius={0} />
+        <Photo src={p.images[0].src} alt={p.images[0].alt} height={240} radius={0} sizes="(max-width: 600px) 100vw, 33vw" />
         {p.tag && <Badge tone="accent" className={styles.tag}>{p.tag}</Badge>}
       </div>
       <div className={styles.body}>

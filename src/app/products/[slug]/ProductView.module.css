@@ -8,7 +8,7 @@
 
 .layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
 
-.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .galleryMain { grid-column: 1 / -1; }
 
 .buy { position: sticky; top: var(--header-offset); display: flex; flex-direction: column; gap: 22px; }
@@ -37,7 +37,7 @@
   .layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .buy { position: static; }
   .galleryMain { height: 380px !important; }
-  .gallerySub { height: 160px !important; }
+  .gallerySub { height: 120px !important; }
 }
 
 @media (max-width: 480px) {

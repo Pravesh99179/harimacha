@@ -16,7 +16,7 @@ import { Radio } from '@/components/ui/Radio';
 import { Select } from '@/components/ui/Select';
 import { Switch } from '@/components/ui/Switch';
 import { Text } from '@/components/ui/Text';
-import { Placeholder } from '@/components/site/Placeholder';
+import { Photo } from '@/components/site/Photo';
 import styles from './ProductView.module.css';
 
 export function ProductView({ product: p }: { product: Product }) {
@@ -44,9 +44,13 @@ export function ProductView({ product: p }: { product: Product }) {
 
       <div className={styles.layout}>
         <div className={styles.gallery}>
-          <Placeholder label={p.images.hero} height={520} className={styles.galleryMain} />
-          <Placeholder label={p.images.detail} height={220} className={styles.gallerySub} />
-          <Placeholder label={p.images.inUse} height={220} className={styles.gallerySub} />
+          {p.images.map((img, i) =>
+            i === 0 ? (
+              <Photo key={img.src} {...img} height={520} sizes="(max-width: 900px) 100vw, 55vw" priority className={styles.galleryMain} />
+            ) : (
+              <Photo key={img.src} {...img} height={180} sizes="(max-width: 900px) 33vw, 18vw" className={styles.gallerySub} />
+            ),
+          )}
         </div>
 
         <div className={styles.buy}>

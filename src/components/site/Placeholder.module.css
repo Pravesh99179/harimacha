@@ -1,0 +1,13 @@
+.placeholder {
+  display: flex; align-items: flex-end; padding: 14px;
+  background: repeating-linear-gradient(135deg, var(--_a) 0 12px, var(--_b) 12px 24px);
+}
+.cream { --_a: var(--cream-200); --_b: var(--cream-100); }
+.dark { --_a: var(--matcha-800); --_b: #25402B; }
+
+.tag {
+  font-family: ui-monospace, Menlo, monospace; font-size: 11px;
+  padding: 3px 7px; border-radius: var(--radius-xs);
+}
+.cream .tag { color: var(--matcha-700); background: rgba(255, 255, 255, 0.6); }
+.dark .tag { color: var(--cream-300); background: rgba(0, 0, 0, 0.2); }

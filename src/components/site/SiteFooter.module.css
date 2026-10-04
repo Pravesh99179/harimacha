@@ -1,0 +1,35 @@
+.footer { background: var(--surface-brand); color: var(--text-on-brand); margin-top: 96px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, 1fr)) minmax(0, 1.4fr);
+  gap: 40px;
+  padding-top: 64px; padding-bottom: 40px;
+}
+
+.brand { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+.column { display: flex; flex-direction: column; gap: 10px; }
+.column ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.link { color: var(--cream-200); text-decoration: none; font-size: 15px; border-radius: var(--radius-xs); outline: none; }
+.link:hover { color: var(--cream-50); text-decoration: underline; }
+.link:focus-visible { box-shadow: var(--ring-focus); }
+
+.newsletter { display: flex; flex-direction: column; gap: 12px; }
+.form { display: flex; gap: 8px; }
+.email { flex: 1; }
+.done { align-self: flex-start; }
+
+.bottom {
+  padding-top: 20px; padding-bottom: 20px;
+  border-top: 1px solid rgba(241, 231, 204, 0.15);
+  font-size: 13px; color: var(--matcha-200);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brand, .newsletter { grid-column: 1 / -1; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 48px; }
+}

@@ -1,0 +1,15 @@
+/* NEUTRALS — warm stone greys, tinted toward the cream/green palette. */
+:root {
+  --neutral-0: #FDFBF6;
+  --neutral-50: #F7F4EC;
+  --neutral-100: #EEEAE0;
+  --neutral-200: #DFDACD;
+  --neutral-300: #C7C1B2;
+  --neutral-400: #A39D8E;
+  --neutral-500: #7E796C;
+  --neutral-600: #5F5B51;
+  --neutral-700: #45423B;
+  --neutral-800: #2E2C28;
+  --neutral-900: #1C1B18;
+  --neutral-950: #11110F;
+}

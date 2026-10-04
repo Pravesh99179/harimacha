@@ -1,0 +1,22 @@
+<!-- @dsCard group="Components" viewport="700x320" name="Logo & Icon" subtitle="Logo variants and Lucide Icon wrapper" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script src="../../lib/load-components.js"></script>
+<style>body{padding:24px;background:var(--surface-page)} .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center} .lbl{font:500 11px/1 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+loadHari('../../').then((DS) => {
+const { Button, IconButton, Input, Select, Checkbox, Radio, Switch, Table, Badge, Card, Text, Logo, Icon } = DS;
+
+function App(){return <div style={{display:'grid',gridTemplateColumns:'1.4fr 1fr',gap:12}}>
+<div style={{background:'var(--matcha-900)',borderRadius:16,height:180,display:'flex',alignItems:'center',justifyContent:'center'}}><Logo tone="onDark" size={72} showHindi/></div>
+<div style={{background:'var(--cream-200)',borderRadius:16,height:180,display:'flex',alignItems:'center',justifyContent:'center',gap:20}}><Logo variant="appIcon" size={72}/><Logo variant="mark" size={72}/></div>
+<div style={{background:'var(--neutral-0)',border:'1px solid var(--border-subtle)',borderRadius:16,height:88,display:'flex',alignItems:'center',justifyContent:'center'}}><Logo variant="compact" size={36}/></div>
+<div style={{background:'var(--neutral-0)',border:'1px solid var(--border-subtle)',borderRadius:16,height:88,display:'flex',alignItems:'center',justifyContent:'center',gap:18,color:'var(--matcha-900)'}}>{['search','shopping-bag','heart','user','leaf','truck'].map(n=><Icon key={n} name={n} size={22}/>)}</div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+});
+</script></body></html>

@@ -1,0 +1,47 @@
+.root { position: fixed; inset: 0; z-index: 50; pointer-events: none; overflow: hidden; }
+.root.open { pointer-events: auto; }
+
+.overlay {
+  position: absolute; inset: 0;
+  background: var(--surface-overlay);
+  opacity: 0; transition: opacity var(--duration-slow) var(--ease-out);
+}
+.open .overlay { opacity: 1; }
+
+.panel {
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 420px; max-width: 100%;
+  display: flex; flex-direction: column;
+  background: var(--surface-page); box-shadow: var(--shadow-lg);
+  transform: translateX(100%);
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+.open .panel { transform: none; }
+
+.head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; border-bottom: 1px solid var(--border-subtle);
+}
+
+.meter { padding: 14px 24px; font-size: 14px; background: var(--haldi-100); color: var(--haldi-900); }
+.meter.unlocked { background: var(--matcha-100); color: var(--matcha-800); }
+.track { height: 4px; margin-top: 8px; border-radius: 4px; background: rgba(0, 0, 0, 0.08); }
+.fill { height: 4px; border-radius: 4px; background: var(--matcha-900); transition: width var(--duration-slow) var(--ease-out); }
+
+.items { flex: 1; overflow: auto; padding: 8px 24px; margin: 0; list-style: none; }
+.empty { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 64px 0; color: var(--text-secondary); }
+
+.line { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border-subtle); }
+.thumb { width: 72px; flex: none; padding: 6px !important; }
+.info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.row { display: flex; justify-content: space-between; gap: 8px; }
+.name { font-weight: var(--weight-medium); color: inherit; text-decoration: none; }
+.name:hover { text-decoration: underline; }
+.total { font-weight: var(--weight-medium); font-variant-numeric: tabular-nums; }
+.size { font-size: 13px; color: var(--text-secondary); }
+.controls { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+.qty { min-width: 20px; text-align: center; font-weight: var(--weight-medium); }
+.remove { margin-left: auto; }
+
+.foot { display: flex; flex-direction: column; gap: 14px; padding: 24px; border-top: 1px solid var(--border-subtle); }
+.subtotal { display: flex; justify-content: space-between; font-size: 18px; font-weight: var(--weight-medium); }

@@ -1,0 +1,31 @@
+.text { margin: 0; text-wrap: pretty; }
+
+.display { font-family: var(--font-display); font-weight: 400; }
+.heading { font-family: var(--font-sans); font-weight: var(--weight-medium); }
+.body { font-family: var(--font-sans); font-weight: var(--weight-regular); }
+
+.display-xl { font-size: var(--type-display-xl-size); line-height: var(--type-display-xl-line); letter-spacing: var(--type-display-xl-track); }
+.display-lg { font-size: var(--type-display-lg-size); line-height: var(--type-display-lg-line); letter-spacing: var(--type-display-lg-track); }
+.display-md { font-size: var(--type-display-md-size); line-height: var(--type-display-md-line); letter-spacing: var(--type-display-md-track); }
+.display-sm { font-size: var(--type-display-sm-size); line-height: var(--type-display-sm-line); letter-spacing: var(--type-display-sm-track); }
+.heading-lg { font-size: var(--type-heading-lg-size); line-height: var(--type-heading-lg-line); letter-spacing: var(--type-heading-lg-track); }
+.heading-md { font-size: var(--type-heading-md-size); line-height: var(--type-heading-md-line); letter-spacing: var(--type-heading-md-track); }
+.heading-sm { font-size: var(--type-heading-sm-size); line-height: var(--type-heading-sm-line); letter-spacing: var(--type-heading-sm-track); }
+.body-lg { font-size: var(--type-body-lg-size); line-height: var(--type-body-lg-line); }
+.body-md { font-size: var(--type-body-md-size); line-height: var(--type-body-md-line); }
+.body-sm { font-size: var(--type-body-sm-size); line-height: var(--type-body-sm-line); }
+.caption { font-family: var(--font-sans); font-size: var(--type-caption-size); line-height: var(--type-caption-line); }
+.overline {
+  font-family: var(--font-sans); font-weight: var(--weight-medium);
+  font-size: var(--type-overline-size); line-height: var(--type-overline-line);
+  letter-spacing: var(--type-overline-track); text-transform: uppercase;
+}
+.label { font-family: var(--font-sans); font-weight: var(--weight-medium); font-size: var(--type-label-size); line-height: var(--type-label-line); }
+
+/* Display sizes are designed for 1200px+; step them down on small screens. */
+@media (max-width: 600px) {
+  .display-xl { font-size: 60px; }
+  .display-lg { font-size: 52px; }
+  .display-md { font-size: 42px; }
+  .display-sm { font-size: 34px; }
+}

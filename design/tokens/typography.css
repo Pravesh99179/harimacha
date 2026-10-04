@@ -1,0 +1,31 @@
+/* TYPOGRAPHY */
+:root {
+  --font-display: "Bagel Fat One", "Jost", system-ui, sans-serif;
+  --font-sans: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-devanagari: "Tiro Devanagari Hindi", "Noto Serif Devanagari", serif;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* Display — Bagel Fat One, uppercase or title case, tight leading */
+  --type-display-xl-size: 96px;  --type-display-xl-line: 0.9;  --type-display-xl-track: -0.01em;
+  --type-display-lg-size: 72px;  --type-display-lg-line: 0.92; --type-display-lg-track: -0.01em;
+  --type-display-md-size: 56px;  --type-display-md-line: 0.95; --type-display-md-track: 0;
+  --type-display-sm-size: 40px;  --type-display-sm-line: 1;    --type-display-sm-track: 0;
+
+  /* Headings — Jost 500 */
+  --type-heading-lg-size: 32px; --type-heading-lg-line: 1.15; --type-heading-lg-track: -0.01em;
+  --type-heading-md-size: 24px; --type-heading-md-line: 1.2;  --type-heading-md-track: -0.005em;
+  --type-heading-sm-size: 20px; --type-heading-sm-line: 1.3;  --type-heading-sm-track: 0;
+
+  /* Body — Jost 400 */
+  --type-body-lg-size: 18px; --type-body-lg-line: 1.55;
+  --type-body-md-size: 16px; --type-body-md-line: 1.55;
+  --type-body-sm-size: 14px; --type-body-sm-line: 1.5;
+  --type-caption-size: 12px; --type-caption-line: 1.4;
+
+  /* Overline — the "M A T C H A" treatment from the logo */
+  --type-overline-size: 12px; --type-overline-line: 1.2; --type-overline-track: 0.32em;
+  --type-label-size: 14px; --type-label-line: 1.3;
+}

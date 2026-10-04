@@ -1,0 +1,16 @@
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  border-radius: var(--badge-radius);
+  font-family: var(--font-sans); font-weight: var(--badge-font-weight);
+  letter-spacing: 0.02em; white-space: nowrap;
+}
+.md { height: var(--badge-height-md); padding: 0 10px; font-size: var(--badge-font-size); }
+.sm { height: var(--badge-height-sm); padding: 0 8px; font-size: 11px; }
+
+.matcha { background: var(--status-success-bg); color: var(--status-success-fg); }
+.haldi { background: var(--status-warning-bg); color: var(--status-warning-fg); }
+.mirchi { background: var(--status-error-bg); color: var(--status-error-fg); }
+.neel { background: var(--status-info-bg); color: var(--status-info-fg); }
+.neutral { background: var(--neutral-100); color: var(--neutral-700); }
+.brand { background: var(--matcha-900); color: var(--cream-200); }
+.accent { background: var(--haldi-300); color: var(--matcha-950); }

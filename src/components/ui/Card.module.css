@@ -1,0 +1,12 @@
+.card {
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  transition: box-shadow var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+.default { background: var(--card-bg); border: 1px solid var(--card-border); color: var(--text-primary); }
+.cream { background: var(--surface-cream); border: 1px solid transparent; color: var(--matcha-950); }
+.brand { background: var(--surface-brand); border: 1px solid transparent; color: var(--text-on-brand); }
+
+.interactive { cursor: pointer; }
+.interactive:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+.interactive:focus-within:has(:focus-visible) { box-shadow: var(--card-shadow-hover), var(--ring-focus); }

@@ -1,0 +1,33 @@
+.hero { background: var(--surface-brand); color: var(--text-on-brand); }
+.heroInner {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 48px; align-items: center;
+  padding-top: 72px; padding-bottom: 72px;
+}
+.heroCopy { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+.heroBody { max-width: 460px; color: var(--cream-100); }
+.heroActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.heroActions .onDarkOutline { --_border: var(--cream-200); --_fg: var(--cream-200); --_bg-hover: rgba(241, 231, 204, 0.1); --_bg-active: rgba(241, 231, 204, 0.16); }
+
+.section { padding-top: 88px; }
+.sectionHead { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.titleStack { display: flex; flex-direction: column; gap: 10px; }
+
+/* Scroll the comparison table sideways on narrow screens rather than crushing its columns. */
+.gradeTable table { min-width: 720px; }
+
+.promo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.promoCard { display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+
+@media (max-width: 900px) {
+  .heroInner { grid-template-columns: minmax(0, 1fr); padding-top: 48px; padding-bottom: 48px; gap: 36px; }
+  .heroImage { height: 320px !important; }
+  .section { padding-top: 64px; }
+  .sectionHead { flex-direction: column; align-items: flex-start; }
+  .promo { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .promoCard { padding: 28px !important; }
+  .promoImage { height: 260px !important; }
+}

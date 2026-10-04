@@ -1,0 +1,33 @@
+/* Shared by Checkbox and Radio. */
+.choice {
+  position: relative;
+  display: inline-flex; align-items: flex-start; gap: var(--checkbox-label-gap);
+  cursor: pointer;
+}
+.choice.disabled { cursor: not-allowed; opacity: 0.5; }
+
+.native { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none; }
+
+.box {
+  width: var(--checkbox-size); height: var(--checkbox-size); flex: none; margin-top: 1px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--checkbox-bg); color: var(--checkbox-mark);
+  border: var(--checkbox-border-width) solid var(--checkbox-border);
+  transition: background var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+.checkbox { border-radius: var(--checkbox-radius); }
+.radio { width: var(--radio-size); height: var(--radio-size); border-radius: 50%; }
+
+.choice:not(.disabled):hover .box { border-color: var(--checkbox-border-hover); }
+.native:checked + .box,
+.native:indeterminate + .box { background: var(--checkbox-bg-checked); border-color: var(--checkbox-bg-checked); }
+.native:focus-visible + .box { box-shadow: var(--ring-focus); }
+
+.mark { display: none; }
+.native:checked + .box .mark,
+.native:indeterminate + .box .mark { display: block; }
+.dot { width: var(--radio-dot-size); height: var(--radio-dot-size); border-radius: 50%; background: var(--checkbox-mark); }
+
+.text { display: flex; flex-direction: column; gap: 2px; }
+.label { font-size: 15px; line-height: 1.4; color: var(--text-primary); }
+.description { font-size: 13px; line-height: 1.4; color: var(--text-secondary); }

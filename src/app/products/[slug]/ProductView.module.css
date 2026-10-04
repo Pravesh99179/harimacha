@@ -1,0 +1,47 @@
+.main { padding-top: 32px; }
+
+.breadcrumb { margin-bottom: 24px; font-size: 14px; color: var(--text-secondary); }
+.breadcrumb ol { display: flex; align-items: center; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.breadcrumb li { display: flex; align-items: center; gap: 6px; }
+.breadcrumb a { color: var(--text-secondary); }
+.breadcrumb a:hover { color: var(--text-primary); }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+
+.gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.galleryMain { grid-column: 1 / -1; }
+
+.buy { position: sticky; top: var(--header-offset); display: flex; flex-direction: column; gap: 22px; }
+.badges { display: flex; gap: 8px; }
+
+.price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; }
+.total { font-size: 32px; font-weight: var(--weight-medium); font-variant-numeric: tabular-nums; }
+.was { font-size: 18px; color: var(--text-muted); text-decoration: line-through; }
+.perCup { font-size: 15px; color: var(--text-secondary); }
+
+.options { display: grid; grid-template-columns: minmax(0, 1fr) 140px; gap: 12px; }
+.qtyField { display: flex; flex-direction: column; gap: 6px; }
+.stepper {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 44px; padding: 0 2px;
+  background: var(--input-bg);
+  border: 1.5px solid var(--input-border); border-radius: var(--input-radius);
+}
+.qty { font-weight: var(--weight-medium); font-variant-numeric: tabular-nums; }
+
+.plans { display: flex; flex-direction: column; gap: 14px; margin: 0; min-width: 0; }
+.plans legend { padding: 0; }
+
+@media (max-width: 900px) {
+  .main { padding-top: 20px; }
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .buy { position: static; }
+  .galleryMain { height: 380px !important; }
+  .gallerySub { height: 160px !important; }
+}
+
+@media (max-width: 480px) {
+  .options { grid-template-columns: minmax(0, 1fr) 120px; }
+  .galleryMain { height: 300px !important; }
+  .gallerySub { height: 120px !important; }
+}

@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" viewport="700x560" name="Forms" subtitle="Input, Select, Checkbox, Radio, Switch" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script src="../../lib/load-components.js"></script>
+<style>body{padding:24px;background:var(--surface-page)} .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center} .lbl{font:500 11px/1 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+loadHari('../../').then((DS) => {
+const { Button, IconButton, Input, Select, Checkbox, Radio, Switch, Table, Badge, Card, Text, Logo, Icon } = DS;
+
+function App(){
+const [size,setSize]=React.useState('50');const [c1,setC1]=React.useState(true);const [c2,setC2]=React.useState(false);const [plan,setPlan]=React.useState('sub');const [sw,setSw]=React.useState(true);
+return <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20}}>
+<Input label="Email" placeholder="you@example.com" iconLeft="mail" helper="We'll send your order updates here"/>
+<Input label="Pincode" defaultValue="56000" error="Pincodes are 6 digits"/>
+<Select label="Pack size" value={size} onChange={setSize} options={[{value:'30',label:'30 g tin',meta:'₹449'},{value:'50',label:'50 g tin',meta:'₹599'},{value:'100',label:'100 g pouch',meta:'₹999'}]}/>
+<Input label="Quantity" defaultValue="2" suffix="tins" disabled/>
+<div style={{display:'flex',flexDirection:'column',gap:12}}><div className="lbl" style={{marginBottom:0}}>Checkbox</div>
+<Checkbox checked={c1} onChange={setC1} label="Ceremonial" description="For drinking straight"/><Checkbox checked={c2} onChange={setC2} label="Everyday" description="For lattes & baking"/><Checkbox indeterminate label="All grades"/><Checkbox disabled label="Culinary (soon)"/></div>
+<div style={{display:'flex',flexDirection:'column',gap:12}}><div className="lbl" style={{marginBottom:0}}>Radio · Switch</div>
+<Radio name="p" value="once" checked={plan==='once'} onChange={setPlan} label="One-time purchase"/><Radio name="p" value="sub" checked={plan==='sub'} onChange={setPlan} label="Subscribe & save 15%" description="Every 30 days, skip anytime"/>
+<Switch checked={sw} onChange={setSw} label="Add a free chasen"/><Switch label="Gift wrap"/></div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+});
+</script></body></html>

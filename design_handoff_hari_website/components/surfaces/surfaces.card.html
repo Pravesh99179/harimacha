@@ -1,0 +1,21 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Cards" subtitle="Default, cream, brand; interactive lift" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script src="../../lib/load-components.js"></script>
+<style>body{padding:24px;background:var(--surface-page)} .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center} .lbl{font:500 11px/1 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+loadHari('../../').then((DS) => {
+const { Button, IconButton, Input, Select, Checkbox, Radio, Switch, Table, Badge, Card, Text, Logo, Icon } = DS;
+
+function App(){return <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:16}}>
+<Card interactive><Text variant="overline" color="var(--text-secondary)">Default</Text><Text variant="heading-sm" style={{marginTop:8}}>Raised white</Text><Text variant="body-sm" color="var(--text-secondary)" style={{marginTop:6}}>Hover to lift.</Text></Card>
+<Card tone="cream" interactive><Text variant="overline">Cream</Text><Text variant="heading-sm" style={{marginTop:8}}>Brand cream</Text><Text variant="body-sm" style={{marginTop:6}}>Product tiles, promos.</Text></Card>
+<Card tone="brand"><Text variant="overline" color="var(--matcha-300)">Brand</Text><Text variant="heading-sm" style={{marginTop:8}}>Matcha 900</Text><Text variant="body-sm" style={{marginTop:6}}>Hero blocks, footers.</Text></Card>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+});
+</script></body></html>

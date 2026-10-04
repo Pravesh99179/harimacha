@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" viewport="700x360" name="Buttons" subtitle="Button + IconButton variants, sizes, states" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+<script src="../../lib/load-components.js"></script>
+<style>body{padding:24px;background:var(--surface-page)} .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center} .lbl{font:500 11px/1 var(--font-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+loadHari('../../').then((DS) => {
+const { Button, IconButton, Input, Select, Checkbox, Radio, Switch, Table, Badge, Card, Text, Logo, Icon } = DS;
+
+function App(){return <div style={{display:'flex',flexDirection:'column',gap:22}}>
+<div><div className="lbl">Variants</div><div className="row">
+<Button>Shop matcha</Button><Button variant="secondary">Learn more</Button><Button variant="accent" iconLeft="shopping-bag">Add · ₹599</Button><Button variant="outline">Outline</Button><Button variant="ghost">Ghost</Button><Button variant="danger">Remove</Button></div></div>
+<div><div className="lbl">Sizes · icons</div><div className="row">
+<Button size="sm">Small</Button><Button size="md" iconRight="arrow-right">Medium</Button><Button size="lg" iconRight="arrow-right">Large</Button></div></div>
+<div><div className="lbl">Disabled · icon buttons</div><div className="row">
+<Button disabled>Out of stock</Button><Button variant="outline" disabled>Disabled</Button>
+<IconButton icon="search" label="Search"/><IconButton icon="heart" label="Save" variant="outline"/><IconButton icon="shopping-bag" label="Cart" variant="secondary" badge={2}/><IconButton icon="arrow-right" label="Next" variant="primary"/></div></div>
+</div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+});
+</script></body></html>

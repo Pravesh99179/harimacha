@@ -1,0 +1,43 @@
+/* PRIMITIVES — raw palette. Never use directly in components; go through semantic/component tokens. */
+:root {
+  /* Matcha — brand green. 900 is the logo ground. */
+  --matcha-50: #F2F5EC;
+  --matcha-100: #E2EAD3;
+  --matcha-200: #C8D7AC;
+  --matcha-300: #A9C27A; /* leaf accent from logo (हरी) */
+  --matcha-400: #8AA858;
+  --matcha-500: #6B8C40;
+  --matcha-600: #4F6F33;
+  --matcha-700: #3A5530;
+  --matcha-800: #2A452F;
+  --matcha-900: #1F3A2B; /* brand green */
+  --matcha-950: #13261C;
+
+  /* Cream — brand light. 200 is the logo ink. */
+  --cream-50: #FBF7EC;
+  --cream-100: #F6EFDB;
+  --cream-200: #F1E7CC; /* brand cream */
+  --cream-300: #E6D7AE;
+  --cream-400: #D6C08A;
+  --cream-500: #B89E62;
+
+  /* Haldi — turmeric accent. Value, offers, "affordable" moments. */
+  --haldi-100: #FBEFC9;
+  --haldi-200: #F7E19A;
+  --haldi-300: #F2D06E;
+  --haldi-500: #E2AE2E;
+  --haldi-700: #9C7314;
+  --haldi-900: #5C430B;
+
+  /* Mirchi — error / destructive */
+  --mirchi-100: #F6DDD5;
+  --mirchi-300: #E59C88;
+  --mirchi-500: #C4513A;
+  --mirchi-700: #8E2F1F;
+
+  /* Neel — info / links in UI copy */
+  --neel-100: #DCE5F0;
+  --neel-300: #93AACB;
+  --neel-500: #3E6596;
+  --neel-700: #2A4670;
+}

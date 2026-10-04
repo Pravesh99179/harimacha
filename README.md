@@ -2,6 +2,8 @@
 
 Marketing and e-commerce site for Hari Matcha, built with Next.js (App Router), React 19 and TypeScript, deployed on Vercel.
 
+Project docs: [PRD.md](PRD.md) (what we're solving and v1 scope), [Architecture.md](Architecture.md) (how the code fits together) and [Design.md](Design.md) (the design system breakdown).
+
 The original design handoff (spec, tokens, prototype components, screenshots) is kept in [`design/`](design/README.md). Treat it as the source of truth for visuals and copy.
 
 ## Develop

@@ -1,4 +1,7 @@
 .wrap {
+  /* Containing block for absolutely positioned cell content (e.g. .visually-hidden labels),
+     so it is clipped by the scroll area instead of widening the page. */
+  position: relative;
   background: var(--table-bg);
   border: 1px solid var(--table-border);
   border-radius: var(--table-radius);
